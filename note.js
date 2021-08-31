@@ -23,6 +23,19 @@ function addNote(title, body) {
     }
 }
 
+// removing a note 
+
+function removeNote(title) {
+    let notes = load()
+    const newNotes = notes.filter(item => item.title !== title)
+    if (newNotes.length === notes.length) {
+        console.log("No note found with this title")
+    } else {
+        save(newNotes)
+        console.log("removed")
+    }
+}
+
 // load the notes from db
 function load() {
     try {
@@ -43,5 +56,6 @@ function save(notes) {
 // exports
 module.exports = {
     addNote: addNote,
-    getNotes: getNotes
+    getNotes: getNotes,
+    removeNote: removeNote
 }
