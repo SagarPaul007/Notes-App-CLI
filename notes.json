@@ -1,1 +1,10 @@
-[{"title":"my note title","body":"my note body"},{"title":"book","body":"something..."}]
+[{
+    "title": "my note title",
+    "body": "my note body"
+}, {
+    "title": "book",
+    "body": "the kite runner"
+}, {
+    "title": "me",
+    "body": "sagar paul"
+}]
