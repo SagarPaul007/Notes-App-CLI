@@ -43,12 +43,20 @@ yargs.command({
     }
 })
 
-// read command
+// find command
 yargs.command({
-    command: 'read',
-    describe: 'read a note',
-    handler: function () {
-        console.log('reading note')
+    command: 'find',
+    describe: 'find a note',
+    builder: {
+        title: {
+            describe: 'Note Title',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler: function (argv) {
+        console.log('searching note ...')
+        notes.findNote(argv.title)
     }
 })
 
@@ -62,4 +70,4 @@ yargs.command({
     }
 })
 
-console.log(yargs.argv)
+yargs.parse()

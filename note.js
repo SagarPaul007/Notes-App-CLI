@@ -31,6 +31,19 @@ function addNote(title, body) {
     }
 }
 
+// find a note by title 
+
+function findNote(title) {
+    let notes = load()
+    let note = notes.find(item => item.title === title)
+    if (note) {
+        console.log(chalk.bold.yellow(note.title))
+        console.log(chalk.green.inverse(note.body))
+    } else {
+        console.log(chalk.red.inverse("no result found"))
+    }
+}
+
 // removing a note 
 
 function removeNote(title) {
@@ -65,5 +78,6 @@ function save(notes) {
 module.exports = {
     addNote: addNote,
     getNotes: getNotes,
-    removeNote: removeNote
+    removeNote: removeNote,
+    findNote: findNote
 }
