@@ -8,7 +8,7 @@ This will download all the required modules
 
 <hr>
 
-## Adding a note
+## Add a note
 
 1. go inside the Notes-App-CLI folder
 2. run this command
