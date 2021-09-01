@@ -3,7 +3,14 @@ const fs = require('fs')
 const chalk = require('chalk')
 
 // getting the notes
-function getNotes() {}
+function getNotes() {
+    const notes = load()
+    notes.forEach((note, i) => {
+        console.log(chalk.bold.red(i + 1))
+        console.log(chalk.yellow(note.title))
+        console.log(chalk.bold.green(note.body))
+    })
+}
 
 // adding a note (title, body)
 function addNote(title, body) {
